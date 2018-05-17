@@ -9,6 +9,7 @@ import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import { Route } from "react-router-dom";
 import rootReducer from "./state/reducers"
 import Home from "./Components/Home"
+import "./main.scss";
 
 const history = createHistory();
 
