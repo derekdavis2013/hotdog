@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import _ from 'lodash';
 import axios from 'axios';
 
-class Home extends Component {
+class Home extends PureComponent {
     constructor(props) {
         super(props);
 
@@ -15,14 +15,14 @@ class Home extends Component {
     getBoi = () => {
         this.setState(_.assign({}, this.state, { loadingState: 'PENDING' }));
         axios.get('https://random.dog/woof.json').then((payload) => {
-            this.setState(_.assign({}, this.state, { url: payload.data.url, loadingState: 'SUCCESS' }))
+            this.setState(_.assign({}, this.state, { url: payload.data.url, loadingState: 'SUCCESS' }));
         });
     };
 
     renderPicOrMp4() {
         if(_.endsWith(this.state.url, 'mp4') || _.endsWith(this.state.url, 'webm')) {
             return (
-                <video width="480" height="320" controls autoPlay>
+                <video className="video-player" controls autoPlay loop>
                     <source src={this.state.url} type="video/mp4" />
                 </video>
             );
