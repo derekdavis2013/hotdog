@@ -59,7 +59,7 @@
     "history": "^4.6.1",
     "html-loader": "^0.5.5",
     "invariant": "2.2.4",
-    "lodash": "^4.17.3",
+    "lodash": "^4.17.21",
     "md5": "^2.2.1",
     "moment": "^2.18.1",
     "node-shims": "^0.1.1",
